@@ -1,0 +1,48 @@
+.button {
+  cursor: pointer;
+  padding: 0.6rem 1.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.button:hover {
+  background-color: #08374f;
+  /* background-color: #71797d; */
+  transition: 0.1s linear;
+}
+
+.button__cross {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  margin-right: 2rem;
+  cursor: pointer;
+  top: 2rem;
+  left: 2rem;
+  z-index: 20;
+}
+
+.button__cross::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: rgb(205, 128, 128);
+  transform: rotate(45deg);
+}
+.button__cross::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: rgb(205, 128, 128);
+  transform: rotate(-45deg);
+}

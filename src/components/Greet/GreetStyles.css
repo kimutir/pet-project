@@ -1,0 +1,123 @@
+.greet {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.greet__text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+
+  text-align: left;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.greet__utils {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+}
+
+.greet__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.greet__tutorial_content {
+  position: fixed;
+  padding: 1rem;
+  min-width: 10rem;
+  /* font-size: 1.5rem; */
+  background-color: rgb(97, 146, 209);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  top: 5%;
+  left: 10%;
+  visibility: hidden;
+}
+
+.greet__tutorial_content p {
+  color: #fff;
+  padding-bottom: 0.5rem;
+}
+.greet__tutorial_switch {
+  top: 10%;
+  left: 75%;
+}
+.greet__tutorial_navbar {
+  top: 40%;
+  left: 10%;
+}
+
+.greet__tutorial_title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.greet__tutorial_buttons {
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.greet__button_close {
+  position: fixed;
+  top: 10%;
+  left: 90%;
+}
+
+.tutrorial__cross {
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  cursor: pointer;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1;
+}
+
+.tutrorial__cross::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: rgb(205, 128, 128);
+  transform: rotate(45deg);
+}
+.tutrorial__cross::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: rgb(205, 128, 128);
+  transform: rotate(-45deg);
+}
+
+/* .tutorial__cross_wrapper {
+  width: 100px;
+  height: 100px;
+} */

@@ -1,0 +1,35 @@
+.projects {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.projects__item {
+  width: 60%;
+  height: 30%;
+  margin: 4rem auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.projects__image {
+  cursor: pointer;
+  width: 20rem;
+  height: auto;
+  border: 1px solid #fff;
+  transition: all 0.5s ease;
+}
+
+.projects__image:hover {
+  transform: translate(-2%, -2%);
+}
+
+.projects__description {
+  width: 15rem;
+}
+
+.projects__title {
+  padding: 1rem 0;
+  text-transform: uppercase;
+}

@@ -1,0 +1,84 @@
+.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__content {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 0;
+}
+
+.contact__social {
+  width: 25%;
+  list-style: none;
+}
+
+.contact__social_button {
+  width: 100%;
+}
+.contact__social li {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact__title {
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.contact__form_item {
+  margin-bottom: 1rem;
+}
+
+.contact__send {
+  cursor: pointer;
+  padding: 0.2rem 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.contact__send:hover {
+  background-color: #08374f;
+  transition: 0.1s linear;
+}
+
+.contact__subject {
+  font-size: 1rem;
+}
+
+.contact__message {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 10rem;
+  font-size: 1rem;
+  padding: 0.2rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  border-radius: 5px;
+  background-color: rgb(107, 137, 178);
+}
+
+.contact__send {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.conatct__user {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

@@ -1,0 +1,53 @@
+:root {
+  --index: calc(1vw+1vh);
+}
+
+.button {
+  z-index: 5;
+  cursor: pointer;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+}
+
+/* эти свойства нужно передать body */
+.wrapper {
+  height: 10000px;
+  /* color: #fff;
+  line-height: 1.75; */
+}
+
+.container {
+  background-color: #010d14;
+  font-size: calc(var(--index) * 1.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.frame {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frame__img {
+  width: calc(var(--index) * 17);
+  height: calc(var(--index) * 25);
+  background-position: center;
+  background-size: cover;
+}
+.img___left {
+  transform: translateX(-60%);
+}
+.img___right {
+  transform: translateX(60%);
+}
