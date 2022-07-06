@@ -1,11 +1,17 @@
 import React from 'react';
 import './ContactStyles';
 import Button from '../Buttons/Button.jsx';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Input from '../Inputs/Input.jsx';
+import { addNewUserAction } from '../../store/userNameReducer';
 
 const Contacts = () => {
   const userName = useSelector((state) => state.userName.name);
+  const dispatch = useDispatch();
+
+  const addName = (name) => {
+    dispatch(addNewUserAction(name.trim()));
+  };
 
   return (
     <div className="contact">
@@ -14,7 +20,10 @@ const Contacts = () => {
       <div className="contact__content">
         <ul className="contact__social">
           <li>
-            <a href="https://hh.ru" target="_blank">
+            <a
+              href="https://hh.ru/resume/ea203c29ff09e8ff200039ed1f6b524d675677"
+              target="_blank"
+            >
               <Button className="contact__social_button">GET RESUME</Button>
             </a>
           </li>
@@ -44,22 +53,36 @@ const Contacts = () => {
         <form
           className="contact__form"
           action="mailto:kimutir@gmail.com"
-          method="GET"
+          method="post"
+          encType="text/plain"
         >
-          <p className="conatct__user contact__form_item">
-            FROM: {userName ? userName : 'Anonymus'}
-          </p>
+          <label>
+            <span>FROM:</span>
 
-          <Input
-            name="subject"
-            type="text"
-            placeholder="Subject"
-            className="contact__subject  contact__form_item"
-          ></Input>
+            <Input
+              type="text"
+              name="from"
+              value={userName}
+              onChange={(e) => addName(e.target.value)}
+              className="contact__input  contact__form_item"
+            />
+          </label>
+
+          <label>
+            <span>SUBJECT:</span>
+
+            <Input
+              name="subject"
+              type="text"
+              className="contact__input  contact__form_item"
+            ></Input>
+          </label>
+
           <textarea
             className="contact__message  contact__form_item"
-            name="body"
+            name="message"
           ></textarea>
+
           <input
             className="contact__send  contact__form_item"
             type="submit"

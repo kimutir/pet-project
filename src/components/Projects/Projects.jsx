@@ -17,7 +17,12 @@ const Projects = () => {
       gif: calcGIF,
     },
 
-    { title: 'english', text: 'Some text', img: engIMG, gif: engGIF },
+    {
+      title: 'english',
+      text: 'English cards to make your learning easier',
+      img: engIMG,
+      gif: engGIF,
+    },
     {
       title: 'gallery',
       text: '3D gallery with 10 random photos',

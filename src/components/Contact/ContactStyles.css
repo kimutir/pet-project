@@ -36,6 +36,13 @@
   width: 50%;
 }
 
+.contact__form label {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .contact__form_item {
   margin-bottom: 1rem;
 }
@@ -57,8 +64,11 @@
   transition: 0.1s linear;
 }
 
-.contact__subject {
-  font-size: 1rem;
+.contact__input {
+  font-size: 1.2rem;
+  min-height: 2rem;
+  margin-left: 1rem;
+  width: 100%;
 }
 
 .contact__message {

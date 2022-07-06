@@ -35,7 +35,7 @@ const Greet = () => {
   };
 
   // ======= логика первой фразы =======
-  const greetOneString = 'Hello, my name is Timur. And yours?';
+  const greetOneString = `Hello, my name is Timur. What's yours?`;
   if (isLoaded) {
     document.body.style.overflow = 'hidden';
 

@@ -14,7 +14,7 @@ const GreetTutorial = ({ greetThree }) => {
     {
       id: 1,
       type: 'navbar',
-      text: 'Makes your navigation <br> easier',
+      text: 'Each icon scrolls to <br> proper section',
       action: () => {
         dispatch(switchVisibleAction());
       },
@@ -30,7 +30,7 @@ const GreetTutorial = ({ greetThree }) => {
     {
       id: 3,
       type: 'about',
-      text: 'Nice to meet you!',
+      text: 'Few words about myself.',
       action: () => {
         elements.projects.scrollIntoView();
       },
@@ -46,7 +46,7 @@ const GreetTutorial = ({ greetThree }) => {
     {
       id: 5,
       type: 'contact',
-      text: 'Definitely contact me',
+      text: 'Give your feedback please',
       action: () => {
         closeTutorial();
       },
