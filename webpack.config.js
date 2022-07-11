@@ -1,6 +1,5 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -20,7 +19,17 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
+    open: {
+      app: {
+        // в package.json для запуска в chrome
+        // "satart": "webpack-dev-server --mode development --open --hot",
+        // name: 'chrome',
+        name: 'google chrome',
+        // name: 'Google Chrome',
+      },
+    },
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -41,6 +50,11 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   use: ['source-map-loader'],
+      // },
     ],
   },
 };

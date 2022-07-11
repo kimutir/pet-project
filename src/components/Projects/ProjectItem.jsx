@@ -8,6 +8,7 @@ const ProjectItem = ({ item, href, arr }) => {
   const dispatch = useDispatch();
   const sendPosition = () => {
     const prevPosition = window.pageYOffset;
+    sessionStorage.setItem('position', prevPosition);
     dispatch(setPrevPosotionAction(prevPosition));
   };
 

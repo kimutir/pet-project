@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   newGreetAction,
   clearGreetAction,
-  loadAction,
   navVisibleAction,
   switchVisibleAction,
 } from '../../store/controlReducer.js';
@@ -19,7 +18,6 @@ const Greet = () => {
   const userName = useSelector((state) => state.userName.name);
   const dispatch = useDispatch();
   const greet = useSelector((state) => state.control.greetText);
-  const isLoaded = useSelector((state) => state.control.isLoaded);
 
   const greetFunction = (string, delay) => {
     dispatch(clearGreetAction());
@@ -33,42 +31,56 @@ const Greet = () => {
       }
     }, delay);
   };
-
-  // ======= логика первой фразы =======
   const greetOneString = `Hello, my name is Timur. What's yours?`;
-  if (isLoaded) {
-    document.body.style.overflow = 'hidden';
-
-    greetFunction(greetOneString, 50);
-
-    dispatch(loadAction(false));
-  }
-
-  // ======= логика второй фразы =======
   const greetTwoString = `Nice to meet you, ${
     userName ? userName : 'Anonymous'
   }.
       Would you like to go through a small tutorial?`;
+  const greetThreeText = `This is my very first project. Hope you will like it.`;
+
+  React.useEffect(() => {
+    if (!Number(sessionStorage.getItem('wasLoaded'))) {
+      document.body.style.overflow = 'hidden';
+
+      greetFunction(greetOneString, 50);
+    } else {
+      greetFunction(greetThreeText, 0);
+      dispatch(switchVisibleAction());
+      dispatch(navVisibleAction());
+    }
+  }, []);
+
+  // ======= логика первой фразы =======
+  // const greetOneString = `Hello, my name is Timur. What's yours?`;
+  // if (Number(sessionStorage.getItem('loaded')) === 1) {
+  //   document.body.style.overflow = 'hidden';
+
+  //   greetFunction(greetOneString, 50);
+  //   // sessionStorage.setItem('loaded', 1);
+  //   // console.log('is loaded', Number(sessionStorage.getItem('loaded')));
+  //   sessionStorage.setItem('loaded', 0);
+  //   console.log('is loaded', Number(sessionStorage.getItem('loaded')));
+  //   dispatch(loadAction(false));
+  // }
+
+  // ======= логика второй фразы =======
 
   const greetTwo = (e) => {
     e.preventDefault();
+
     greetFunction(greetTwoString, 30);
   };
   // ====================================
 
   // ======= логика третей фразы =======
-  const greetThreeText = `This is my very first project. Hope you will like it.`;
+  // const greetThreeText = `This is my very first project. Hope you will like it.`;
 
   const greetThree = () => {
     greetFunction(greetThreeText, 50);
     document.body.style.overflow = 'scroll';
     dispatch(switchVisibleAction());
     dispatch(navVisibleAction());
-
-    // setTimeout(() => {
-    //   dispatch(clearGreetAction());
-    //   dispatch(newGreetAction('hello'));
-    // }, 3000);
+    sessionStorage.setItem('wasLoaded', 1);
   };
   // ====================================
 

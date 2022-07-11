@@ -23,12 +23,11 @@ body {
   scroll-behavior: smooth;
   font-size: calc(var(--index) * 1.3);
 
-  transition: all 0.5s linear;
+  transition: background-color 0.5s linear;
 }
 
 .wrapper {
   background-color: #02293d;
-  /* background-color: #5c6366; */
 }
 
 .light {

@@ -8,22 +8,27 @@ import SwitchButton from '../SwitchButton/SwitchButton.jsx';
 import { useSelector } from 'react-redux';
 
 const MainPage = () => {
-  const prevPosition = useSelector((state) => state.control.prevPosition);
-  const trigger = useSelector((state) => state.control.trigger);
-
   React.useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant',
-    });
+    if (Number(sessionStorage.getItem('needScroll'))) {
+      window.scrollTo({
+        top: Number(sessionStorage.getItem('position')),
+        behavior: 'instant',
+      });
+      sessionStorage.setItem('needScroll', 0);
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant',
+      });
+    }
   }, []);
 
-  React.useEffect(() => {
-    window.scrollTo({
-      top: prevPosition,
-      behavior: 'instant',
-    });
-  }, [trigger]);
+  // React.useEffect(() => {
+  //   window.scrollTo({
+  //     top: Number(sessionStorage.getItem('position')),
+  //     behavior: 'instant',
+  //   });
+  // }, [trigger]);
 
   return (
     <>
